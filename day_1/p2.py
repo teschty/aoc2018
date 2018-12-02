@@ -3,10 +3,10 @@ def part_two():
         lines = f.readlines()
 
     freq = 0
-    previous_freqs = dict()
+    previous_freqs = { 0 }
     while True:
         for line in lines:
-            previous_freqs[freq] = 1
+            previous_freqs.add(freq)
 
             val = int(line)
             freq += val
