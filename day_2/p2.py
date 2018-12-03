@@ -4,15 +4,16 @@ with open("input.txt") as f:
     lines = f.readlines()
 
 def difference(one, two):
-    differing = 0
+    num_differing = 0
     common = ""
-    for i, c in enumerate(one):
-        if one[i] != two[i]:
-            differing += 1
-        else:
-            common += c
 
-    return differing, common
+    for c1, c2 in zip(one, two):
+        if c1 != c2:
+            num_differing += 1
+        else:
+            common += c1
+
+    return num_differing, common
 
 # input is small enough that we can brute-force
 one_off = [(l1, l2) for l1 in lines for l2 in lines if difference(l1, l2)[0] == 1]
