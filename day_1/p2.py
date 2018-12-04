@@ -1,18 +1,18 @@
+from itertools import cycle
+
 def part_two():
     with open("input.txt") as f:
         lines = f.readlines()
 
     freq = 0
     previous_freqs = { 0 }
-    while True:
-        for line in lines:
-            previous_freqs.add(freq)
+    for line in cycle(lines):
+        previous_freqs.add(freq)
 
-            val = int(line)
-            freq += val
+        val = int(line)
+        freq += val
 
-            if freq in previous_freqs:
-                print(freq)
-                return
+        if freq in previous_freqs:
+            return freq
 
-part_two()
+print(part_two())
