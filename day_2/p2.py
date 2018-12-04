@@ -3,6 +3,8 @@
 with open("input.txt") as f:
     lines = f.readlines()
 
+# returns the number of differing characters and common characters joined to a string
+# works under the assumption that both strings are the same length
 def difference(one, two):
     common_chars = [c1 for (c1, c2) in zip(one, two) if c1 == c2]
 
