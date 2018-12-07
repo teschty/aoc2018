@@ -1,7 +1,3 @@
-from itertools import takewhile
-from functools import reduce
-from collections import Counter
-
 with open("input.txt") as f:
     lines = f.readlines()
 
