@@ -32,8 +32,6 @@ while True:
 
     # delete step from all keys
     for key in graph.keys():
-        x = []
-
         if step in graph[key]:
             graph[key].remove(step)
 
