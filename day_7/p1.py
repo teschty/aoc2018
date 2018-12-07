@@ -4,20 +4,20 @@ with open("input.txt") as f:
 graph = {}
 
 for line in lines:
-    first = line[5]
-    second = line[36]
+    step = line[5]
+    dependency = line[36]
 
-    vals = graph.get(second, [])
-    vals.append(first)
-    graph[second] = vals
+    vals = graph.get(dependency, [])
+    vals.append(step)
+    graph[dependency] = vals
 
     # make sure every key has some list
-    graph[first]= graph.get(first, [])
+    graph[step]= graph.get(step, [])
 
 order = ""
 
 while True:
-    # if 
+    # if a step has no dependency in it's list, it's available
     available = sorted([key for key in graph.keys() if len(graph[key]) == 0])
 
     if len(available) == 0:
