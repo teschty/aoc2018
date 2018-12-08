@@ -10,7 +10,10 @@ def read_node(it):
     children = [read_node(it) for _ in range(num_children)]
     metadata = [next(it) for _ in range(num_metadata)]
 
-    return sum(children) + sum(metadata)
+    if len(children) == 0:
+        return sum(metadata)
+
+    return sum([children[i - 1] for i in metadata if i > 0 and i <= len(children)])
 
 iterator = iter(values)
 print(read_node(iterator))
