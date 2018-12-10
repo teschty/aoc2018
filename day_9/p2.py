@@ -19,8 +19,6 @@ class Node:
         self.prev.next = self.next
         self.next.prev = self.prev
 
-        return self.value
-
 text_parts = text.split()
 num_players = int(text_parts[0])
 num_marbles = int(text_parts[6])
