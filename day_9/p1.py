@@ -11,6 +11,9 @@ player_scores = [0 for _ in range(num_players)]
 cur_marble = 1
 cur_player = 0
 for marble in range(2, num_marbles):
+    if marble % 10000 == 0:
+        print(marble)
+        
     if marble % 23 != 0:
         insert_idx = (cur_marble + 2) % len(circle)
         circle.insert(insert_idx, marble)
