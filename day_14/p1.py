@@ -1,5 +1,3 @@
-import time
-
 with open("input.txt") as f:
     after_amount = int(f.read().strip())
 
